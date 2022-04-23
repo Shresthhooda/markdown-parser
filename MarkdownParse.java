@@ -15,23 +15,26 @@ public class MarkdownParse {
         while(currentIndex < markdown.length()) {
             int openBracket = markdown.indexOf("[", currentIndex);
             int closeBracket = markdown.indexOf("]", openBracket);
-            /* if (markdown.indexOf(" ",closeBracket) < markdown.indexOf("(", closeBracket)){
+            if (closeBracket + 1 == markdown.indexOf("]", closeBracket + 1)){
+                int closeParen = markdown.indexOf(")", closeBracket);
+                currentIndex = closeParen + 1;
+                continue;
+            }
+            if (markdown.indexOf(" ",closeBracket) < markdown.indexOf("(", closeBracket) && markdown.indexOf(" ",closeBracket) != -1){
                 // System.out.println("hi");
                 int closeParen = markdown.indexOf(")", closeBracket);
                 currentIndex = closeParen + 1;
                 continue;
-            } */
-            int openParen = markdown.indexOf("(", closeBracket);
-            int closeParen = markdown.indexOf(")", openParen);
-            /* if(markdown.substring(openParen, openParen + 1).equals("("))
-            {
-             toReturn.add(markdown.substring(openParen + 2, closeParen));
             }
-            else
-            { */
-                 toReturn.add(markdown.substring(openParen + 1, closeParen));
-            //}
-            
+
+            int openParen = markdown.indexOf("(", closeBracket);
+            if (openParen + 1 == markdown.indexOf("(", openParen + 1)){
+                int closeParen = markdown.indexOf(")", closeBracket);
+                currentIndex = closeParen + 1;
+                continue;
+            }
+            int closeParen = markdown.indexOf(")", openParen);
+            toReturn.add(markdown.substring(openParen + 1, closeParen));
             currentIndex = closeParen + 1;
         }
        
