@@ -59,7 +59,7 @@ public class MarkdownParseTest {
         toReturn.add("some-thing.html");
         toReturn.add("https://www.youtube.com/watch?v=k67e-Icw4ug&ab_channel=CS50");
         toReturn.add("many-things.html");
-        toReturn.add("https://games.com");
+        toReturn.add("https://games.com)");
         System.out.println(toReturn);
         Path fileName = Path.of("test-file4.md");
         String content = Files.readString(fileName);
