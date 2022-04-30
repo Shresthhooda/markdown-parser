@@ -34,12 +34,12 @@ public class MarkdownParse {
                 continue;
             }
             
-            /*if (markdown.indexOf(" ",openParen) < markdown.indexOf(")", openParen) && markdown.indexOf(" ",openParen) != -1){
+            if (markdown.indexOf(" ",openParen) < markdown.indexOf(")", openParen) && markdown.indexOf(" ",openParen) != -1){
                 // System.out.println("hi");
                 int closeParen = markdown.indexOf(")", openParen);
                 currentIndex = closeParen + 1;
                 continue;
-            }*/
+            }
 
             int closeParen = markdown.indexOf(")", openParen);
             toReturn.add(markdown.substring(openParen + 1, closeParen));
