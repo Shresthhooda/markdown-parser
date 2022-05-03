@@ -5,11 +5,14 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 public class MarkdownParseTest {
+    public static void main(String[] args) {
+        
+    }
     @Test
     public void addition() {
         assertEquals(2, 1 + 1);
     }
-
+    
     @Test
     public void getLinksEquals() throws Exception{
         ArrayList<String> toReturn = new ArrayList<String>();
