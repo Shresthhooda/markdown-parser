@@ -13,6 +13,7 @@ public class MarkdownParseTest {
         assertEquals(2, 1 + 1);
     }
     
+    
     @Test
     public void getLinksEquals() throws Exception{
         ArrayList<String> toReturn = new ArrayList<String>();
