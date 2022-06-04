@@ -20,9 +20,9 @@ public class MarkdownParse {
                 currentIndex = closeParen + 1;
                 continue;
             }
-
             
-            if (markdown.indexOf(" ",closeBracket) < markdown.indexOf("(", closeBracket) && markdown.indexOf(" ",closeBracket) != -1){
+            if (markdown.indexOf(" ",closeBracket) < markdown.indexOf("(", closeBracket) 
+                && markdown.indexOf(" ",closeBracket) != -1){
                 // System.out.println("hi");
                 int closeParen = markdown.indexOf(")", closeBracket);
                 currentIndex = closeParen + 1;

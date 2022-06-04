@@ -84,4 +84,38 @@ public class MarkdownParseTest {
         ArrayList<String> links = MarkdownParse.getLinks(content);
         assertEquals(toReturn, links);
     }
+
+    @Test
+    public void Snippet1Test() throws Exception{
+        ArrayList<String> toReturn = new ArrayList<String>();
+        toReturn.add("google.com");
+        toReturn.add("google.com");
+        toReturn.add("ucsd.edu");
+        System.out.println(toReturn);
+        Path fileName = Path.of("Snippet1.md");
+        String content = Files.readString(fileName);
+        ArrayList<String> links = MarkdownParse.getLinks(content);
+        assertEquals(toReturn, links);
+    }
+    @Test
+    public void Snippet2Test() throws Exception{
+        ArrayList<String> toReturn = new ArrayList<String>();
+        toReturn.add("a.com(())");
+        toReturn.add("example.com");
+        System.out.println(toReturn);
+        Path fileName = Path.of("Snippet2.md");
+        String content = Files.readString(fileName);
+        ArrayList<String> links = MarkdownParse.getLinks(content);
+        assertEquals(toReturn, links);
+    }
+    @Test
+    public void Snippet3Test() throws Exception{
+        ArrayList<String> toReturn = new ArrayList<String>();
+        toReturn.add("https://sites.google.com/eng.ucsd.edu/cse-15l-spring-2022/schedule");
+        System.out.println(toReturn);
+        Path fileName = Path.of("Snippet3.md");
+        String content = Files.readString(fileName);
+        ArrayList<String> links = MarkdownParse.getLinks(content);
+        assertEquals(toReturn, links);
+    }
 }
